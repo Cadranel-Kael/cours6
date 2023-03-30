@@ -1,5 +1,8 @@
 <?php
 
+use Core\Database;
+use Core\Response;
+
 $heading = 'Note';
 $currentUserId = 1;
 $id = (int)$_GET['id'];
@@ -8,4 +11,4 @@ $note = $database->query('SELECT * FROM Notes where id = :id', ['id' => $id])->f
 if ($currentUserId !== $note['user_id']) {
     Response::abort(Response::FORBIDDEN);
 }
-require VIEWS_PATH . '/note.view.php';
+view('notes/show.view.php', compact('heading', 'note', 'currentUserId'));

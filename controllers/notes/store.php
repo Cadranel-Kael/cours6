@@ -1,5 +1,9 @@
 <?php
 
+use Core\Database;
+use Core\Response;
+use Core\Validator;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $currentUserId = $_POST['currentUserId'];
 
@@ -20,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         Response::redirect('Location: http://cours6.localhost/notes');
     } else {
         $heading = 'Create Note';
-        require VIEWS_PATH . '/note-create.view.php';
+        view('notes/create.view.php', compact('heading', 'currentUserId', 'errors', 'currentUserId'));
     }
 } else {
     Response::abort();

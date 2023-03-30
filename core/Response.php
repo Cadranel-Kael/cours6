@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Response
 {
     public const BAD_REQUEST = 400;
@@ -10,7 +12,7 @@ class Response
     public static function abort($code = self::NOT_FOUND)
     {
         http_response_code($code);
-        require VIEWS_PATH . "/codes/{$code}.view.php";
+        require base_path('views/codes/' . $code .'.view.php');
         die();
     }
 

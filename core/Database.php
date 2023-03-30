@@ -1,5 +1,11 @@
 <?php
 
+namespace Core;
+
+use Exception;
+use PDO;
+use PDOStatement;
+
 class Database
 {
     private PDO $connection;
@@ -8,7 +14,7 @@ class Database
     public function __construct(string $file)
     {
         if (!$settings = @parse_ini_file($file, true)) {
-            throw new exception('Unable to open ' . $file . '.');
+            throw new Exception('Unable to open ' . $file . '.');
         }
         $dsn = $settings['database']['driver'] .
             ':host=' . $settings['database']['host'] .

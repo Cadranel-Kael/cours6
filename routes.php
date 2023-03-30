@@ -1,9 +1,9 @@
 <?php
 
 return [
-    '/' => 'index.php',
-    '/about' => 'about.php',
-    '/contact' => 'contact.php',
+    '/' => 'pages/dashboard.php',
+    '/about' => 'pages/about.php',
+    '/contact' => 'pages/contact.php',
     '/notes' => 'notes/index.php',
     '/note' => 'notes/show.php',
     '/notes/create' => 'notes/create.php',

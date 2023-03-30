@@ -9,14 +9,14 @@
 
 <body class="h-full">
     <div class="min-h-full">
-        <?php require VIEWS_PATH . '/partials/nav.view.php' ?>
-        <?php require VIEWS_PATH . '/partials/header.view.php' ?>
+        <?php require base_path('views/partials/nav.view.php'); ?>
+        <?php  require base_path('views/partials/header.view.php'); ?>
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                 <!-- Replace with your content -->
                 <div class="px-4 py-6 sm:px-0">
                     <div class="h-96 rounded-lg border-4 border-dashed border-gray-200">
-                        <h1>À propos</h1>
+                        <h1>About</h1>
                     </div>
                 </div>
                 <!-- /End replace -->
