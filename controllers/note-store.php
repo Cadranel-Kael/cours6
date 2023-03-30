@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
     $database = new Database(ENV_FILE);
     $database->query('INSERT INTO notes(description, user_id) values(:description, :currentUserId)', ['description' => $description, 'currentUserId' => $currentUserId]);
-    header('Location: http://a.test/notes');
+    Response::redirect('Location: http://cours6.localhost/notes');
 } else {
-    abort(Response::NOT_FOUND);
+    Response::abort();
 }
